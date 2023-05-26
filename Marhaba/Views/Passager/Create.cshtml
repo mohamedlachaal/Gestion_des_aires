@@ -1,0 +1,25 @@
+﻿@model Passager
+
+<h1>Ajouter un passager</h1>
+
+<form method="post" action="#">
+    <div>
+        <label asp-for="Nom"></label>
+        <input type="text" asp-for="Nom" pattern="[A-Za-z]{3,30}"  />
+        <span asp-validation-for="Nom"></span>
+    </div>
+    <div>
+        <label asp-for="Prenom"></label>
+        <input type="text" asp-for="Prenom" pattern="[A-Za-z]{3,30}"  />
+        <span asp-validation-for="Prenom"></span>
+    </div>
+    <div>
+        <label asp-for="Tel"></label>
+        <input type="text" asp-for="Tel" pattern="0[567][0-9]{8}" />
+        <span asp-validation-for="Tel"></span>
+    </div>
+    <div>
+        <input type="submit" value="Inscrire"/>
+    </div>
+
+</form>

@@ -1,0 +1,40 @@
+﻿@model Passager
+
+
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="alert alert-danger">
+        <ul>
+            @foreach (var error in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+            {
+                <li>@error.ErrorMessage</li>
+            }
+        </ul>
+    </div>
+}
+@if(TempData["password"]!=null)
+            {
+<h1>votre password est @TempData["password"]</h1>
+            }
+
+
+<form method="post" action="#">
+    <!--<div asp-validation-summary="All">
+
+       </div>-->
+    <div>
+        <label asp-for="Tel"></label>
+        <input type="text" asp-for="Tel" pattern="0[567][0-9]{8}" />
+        <span asp-validation-for="Tel"></span>
+    </div>
+    <div>
+        <label asp-for="Password"></label>
+        <input type="text" asp-for="Password" pattern="{8}" />
+        <span asp-validation-for="Nom"></span>
+    </div>
+    <div>
+        <input type="submit" value="Se connecter" />
+    </div>
+
+</form>

@@ -1,0 +1,41 @@
+﻿@model IEnumerable<Marhaba.Models.Reservation>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+
+</table>
+<table class="table">
+    <thead>
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.aire)
+            </th>
+            
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Aire aire in ViewBag.aires)
+        { 
+        <tr>
+            <td>
+                @aire.Nom
+            </td>
+
+      
+            <td><a asp-action="Create" asp-route-id="@aire.Id">reserver</a></td>
+
+            
+        </tr>
+        }
+    </tbody>
+</table>
